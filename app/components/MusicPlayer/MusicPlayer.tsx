@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react"
 
+const audioPath = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/audio/KateXmas2025mix.mp3`
+
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
@@ -128,7 +130,7 @@ export default function MusicPlayer() {
   const handleDownload = () => {
     try {
       const link = document.createElement("a")
-      link.href = "/audio/KateXmas2025mix.mp3"
+      link.href = audioPath
       link.download = "KateXmas2025mix.mp3"
       document.body.appendChild(link)
       link.click()
@@ -165,7 +167,7 @@ export default function MusicPlayer() {
     <div className="mt-8 w-full max-w-sm music-player">
       <audio
         ref={audioRef}
-        src="/audio/KateXmas2025mix.mp3"
+        src={audioPath}
         preload="metadata"
       />
 
