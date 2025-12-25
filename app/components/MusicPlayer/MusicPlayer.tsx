@@ -128,8 +128,8 @@ export default function MusicPlayer() {
   const handleDownload = () => {
     try {
       const link = document.createElement("a")
-      link.href = "/audio/KateXmas2025mix.m4a"
-      link.download = "KateXmas2025mix.m4a"
+      link.href = "/audio/KateXmas2025mix.mp3"
+      link.download = "KateXmas2025mix.mp3"
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -162,39 +162,39 @@ export default function MusicPlayer() {
   }
 
   return (
-    <div className="music-player mt-8 w-full max-w-sm">
+    <div className="mt-8 w-full max-w-sm music-player">
       <audio
         ref={audioRef}
-        src="/audio/KateXmas2025mix.m4a"
+        src="/audio/KateXmas2025mix.mp3"
         preload="metadata"
       />
 
       {/* Sleek Card Container */}
-      <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 p-5 space-y-4">
+      <div className="p-5 space-y-4 rounded-2xl border border-gray-100 shadow-lg backdrop-blur-sm bg-white/95">
         {/* Header */}
         <div className="text-center">
-          <p className="text-sm text-gray-600 font-medium">
+          <p className="text-sm font-medium text-gray-600">
             A special DJ mix just for you
           </p>
           {error && (
-            <p className="text-xs text-red-600 mt-2" role="alert">
+            <p className="mt-2 text-xs text-red-600" role="alert">
               {error}
             </p>
           )}
           {isLoading && !error && (
-            <p className="text-xs text-gray-500 mt-2" aria-live="polite">
+            <p className="mt-2 text-xs text-gray-500" aria-live="polite">
               Loading...
             </p>
           )}
         </div>
 
         {/* Controls Row */}
-        <div className="flex items-center gap-3">
+        <div className="flex gap-3 items-center">
           {/* Play/Pause Button */}
           <button
             onClick={togglePlay}
             disabled={!!error || isLoading}
-            className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white rounded-full transition-all duration-200 flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105 active:scale-95 disabled:hover:scale-100"
+            className="flex flex-shrink-0 justify-center items-center w-12 h-12 text-white bg-gradient-to-br from-pink-500 to-rose-600 rounded-full shadow-md transition-all duration-200 hover:from-pink-600 hover:to-rose-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed hover:shadow-lg hover:scale-105 active:scale-95 disabled:hover:scale-100"
             aria-label={isPlaying ? "Pause music" : "Play music"}
             aria-disabled={!!error || isLoading}
           >
@@ -233,14 +233,14 @@ export default function MusicPlayer() {
               )}`}
             >
               <div
-                className="bg-gradient-to-r from-pink-500 to-rose-600 h-full rounded-full transition-all duration-200 relative"
+                className="relative h-full bg-gradient-to-r from-pink-500 to-rose-600 rounded-full transition-all duration-200"
                 style={{
                   width: `${
                     duration > 0 ? (currentTime / duration) * 100 : 0
                   }%`,
                 }}
               >
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3 h-3 bg-white rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute right-0 top-1/2 w-3 h-3 bg-white rounded-full shadow-sm opacity-0 transition-opacity translate-x-1/2 -translate-y-1/2 group-hover:opacity-100" />
               </div>
             </div>
 
@@ -254,7 +254,7 @@ export default function MusicPlayer() {
           {/* Download Button */}
           <button
             onClick={handleDownload}
-            className="flex-shrink-0 w-10 h-10 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-all duration-200 flex items-center justify-center shadow-sm hover:shadow-md hover:scale-105 active:scale-95"
+            className="flex flex-shrink-0 justify-center items-center w-10 h-10 text-gray-700 bg-gray-100 rounded-full shadow-sm transition-all duration-200 hover:bg-gray-200 hover:shadow-md hover:scale-105 active:scale-95"
             aria-label="Download audio"
             title="Download mix"
           >
