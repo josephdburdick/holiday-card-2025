@@ -239,7 +239,7 @@ export default function CardFlip() {
             <div className="card-front">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
-                  src="/img/xmas-card-cover-2025.png"
+                  src="img/xmas-card-cover-2025.png"
                   alt="Christmas Card Cover"
                   fill
                   className="object-cover"

@@ -2,9 +2,11 @@
 const isProduction = process.env.NODE_ENV === "production"
 
 const nextConfig = {
+  basePath: isProduction ? "/holiday-card-2025" : "",
   output: "export",
-  trailingSlash: true,
-  images: { unoptimized: true },
+  images: {
+    unoptimized: true,
+  },
 }
 
-module.exports = nextConfig
+export default nextConfig
