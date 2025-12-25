@@ -255,7 +255,10 @@ export default function CardFlip() {
 
             {/* Back (Inside Page) */}
             <div className="card-back">
-              <div className="bg-gradient-to-b from-white via-[#fdfbf9] to-[#faf8f5] rounded-[clamp(12px,1.5vw,20px)] p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-start items-center text-center w-full h-full relative overflow-y-auto shadow-[inset_4px_0_16px_rgba(0,0,0,0.08),inset_0_4px_24px_rgba(0,0,0,0.06)]">
+              <div
+                className="bg-gradient-to-b from-white via-[#fdfbf9] to-[#faf8f5] rounded-[clamp(12px,1.5vw,20px)] p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-start items-center text-center w-full h-full relative overflow-y-auto shadow-[inset_4px_0_16px_rgba(0,0,0,0.08),inset_0_4px_24px_rgba(0,0,0,0.06)]"
+                style={{ WebkitOverflowScrolling: "touch" }}
+              >
                 {/* Paper texture overlay */}
                 <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.015)_2px,rgba(0,0,0,0.015)_4px)] opacity-30 pointer-events-none"></div>
 

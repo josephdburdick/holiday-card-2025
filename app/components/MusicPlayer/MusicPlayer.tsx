@@ -2,7 +2,9 @@
 
 import { useState, useRef, useEffect } from "react"
 
-const audioPath = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/audio/KateXmas2025mix.mp3`
+const audioPath = `${
+  process.env.NEXT_PUBLIC_BASE_PATH || ""
+}/audio/KateXmas2025mix.mp3`
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -165,11 +167,7 @@ export default function MusicPlayer() {
 
   return (
     <div className="mt-8 w-full max-w-sm music-player">
-      <audio
-        ref={audioRef}
-        src={audioPath}
-        preload="metadata"
-      />
+      <audio ref={audioRef} src={audioPath} preload="metadata" />
 
       {/* Sleek Card Container */}
       <div className="p-5 space-y-4 rounded-2xl border border-gray-100 shadow-lg backdrop-blur-sm bg-white/95">
