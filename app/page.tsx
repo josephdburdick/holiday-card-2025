@@ -1,4 +1,5 @@
-import CardFlip from './components/CardFlip/CardFlip'
+import CardFlip from "./components/CardFlip/CardFlip"
+import Image from "next/image"
 
 export default function Home() {
   return (
