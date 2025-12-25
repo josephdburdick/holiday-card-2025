@@ -21,12 +21,12 @@ export default function RootLayout({
       <body>
         <SnowParticles />
         {children}
-        <h1 className="z-0 fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2">
+        <h1 className="fixed bottom-4 left-1/2 z-0 -translate-x-1/2 md:bottom-6">
           <Image
             src="img/logo--solid.svg"
             alt="Logo"
-            width={70}
-            height={16}
+            width={40}
+            height={20}
             className="invert"
           />
         </h1>

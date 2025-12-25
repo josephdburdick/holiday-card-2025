@@ -69,8 +69,8 @@ export default function CardFlip() {
       let horizontalPadding, verticalPadding
 
       if (viewportWidth <= 480) {
-        horizontalPadding = viewportWidth * 0.04 // 4% on mobile
-        verticalPadding = viewportHeight * 0.05 // 5% on mobile
+        horizontalPadding = viewportWidth * 0.025 // 4% on mobile
+        verticalPadding = viewportHeight * 0.025 // 2% on mobile
       } else {
         horizontalPadding = viewportWidth * 0.06 // 6% on tablet
         verticalPadding = viewportHeight * 0.08 // 8% on tablet
@@ -211,11 +211,10 @@ export default function CardFlip() {
           />
         </svg>
       </button>
-      <div className="card-container z-10">
+      <div className="z-10 card-container">
         <div
           className={`card-wrapper ${isFlipped ? "flipped" : ""} ${
-            !isFlipped ? "cursor-pointer" : ""
-          }`}
+            !isFlipped ? "cursor-pointer" : ""}`}
           onClick={handleCardClick}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
@@ -237,7 +236,7 @@ export default function CardFlip() {
           >
             {/* Front Cover */}
             <div className="card-front">
-              <div className="relative w-full h-full overflow-hidden">
+              <div className="overflow-hidden relative w-full h-full">
                 <Image
                   src="img/xmas-card-cover-2025.png"
                   alt="Christmas Card Cover"
