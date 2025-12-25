@@ -14,24 +14,27 @@ A beautiful interactive Christmas card with page-turn animation and music.
 ## Setup
 
 1. **Add your content:**
+
    - Your cover image is already at `public/img/xmas-card-cover-2025.png`
    - Add your DJ mix audio file to `public/audio/` (e.g., `christmas-mix.mp3`)
    - Update the message text in `app/components/InsideMessage/InsideMessage.tsx`
    - Update your name in the signature
 
 2. **Install dependencies:**
+
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Development:**
+
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 4. **Build for production:**
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 ## Deployment
@@ -39,26 +42,30 @@ A beautiful interactive Christmas card with page-turn animation and music.
 This is a Next.js static site that can be deployed to any static hosting service:
 
 ### GitHub Pages
+
 ```bash
-npm run build
+pnpm run build
 # The `out/` directory contains your static files
 # Upload the contents of `out/` to your GitHub Pages branch
 ```
 
 ### Netlify
+
 ```bash
-npm run build
+pnpm run build
 # Upload the `out/` directory to Netlify
 ```
 
 ### Vercel
+
 ```bash
-npm run build
+pnpm run build
 # Vercel will automatically detect and deploy the `out/` directory
 ```
 
 ### Other static hosts
-Upload the contents of the `out/` directory after running `npm run build`.
+
+Upload the contents of the `out/` directory after running `pnpm run build`.
 
 ## Customization
 
