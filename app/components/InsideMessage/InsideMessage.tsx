@@ -5,7 +5,7 @@ export default function InsideMessage() {
       {/* <div className="decorative-divider mb-6"></div> */}
 
       {/* Message text */}
-      <div className="space-y-4 [&_p]:text-left flex flex-col flex-1 font-montserrat text-sm sm:text-base md:text-lg leading-relaxed text-gray-800 font-normal tracking-wide max-w-[85%] sm:max-w-[420px] relative z-10">
+      <div className="space-y-4 [&_p]:text-left flex flex-col flex-1 font-montserrat text-sm sm:text-base md:text-lg leading-relaxed text-gray-800 font-normal tracking-wide max-w-[85%] sm:max-w-[420px] relative z-10 min-h-0">
         <p className="md:text-2xl md:pt-4">
           Merry Christmas, Kate! <span className="text-2xl">🎄✨</span>
         </p>
