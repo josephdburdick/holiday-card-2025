@@ -188,7 +188,7 @@ export default function CardFlip() {
             handleBackClick(e as any)
           }
         }}
-        className={`absolute top-4 left-4 z-20 w-10 h-10 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center hover:scale-105 active:scale-95 border border-gray-200 ${
+        className={`fixed top-4 left-4 z-50 flex justify-center items-center w-8 h-8 rounded-full backdrop-blur-sm transition-colors duration-200 bg-white/20 hover:bg-white/30 ${
           isFlipped
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -198,7 +198,7 @@ export default function CardFlip() {
         tabIndex={isFlipped ? 0 : -1}
       >
         <svg
-          className="w-5 h-5 text-gray-700"
+          className="w-5 h-5 text-white"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -214,8 +214,9 @@ export default function CardFlip() {
       <div className="z-10 card-container">
         <div
           className={`card-wrapper ${isFlipped ? "flipped" : ""} ${
-            !isFlipped ? "cursor-pointer" : ""}`}
-          onClick={handleCardClick}
+            !isFlipped ? "cursor-pointer" : ""
+          }`}
+          onClick={!isFlipped ? handleCardClick : undefined}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault()
@@ -228,11 +229,15 @@ export default function CardFlip() {
           style={{
             width: `${dimensions.width}px`,
             height: `${dimensions.height}px`,
+            ...(isFlipped ? { pointerEvents: "none" } : {}),
           }}
         >
           <div
             className="card-inner"
-            style={prefersReducedMotion ? { transition: "none" } : undefined}
+            style={{
+              ...(prefersReducedMotion ? { transition: "none" } : {}),
+              ...(isFlipped ? { pointerEvents: "auto" } : {}),
+            }}
           >
             {/* Front Cover */}
             <div className="card-front">
@@ -256,7 +261,13 @@ export default function CardFlip() {
             <div className="card-back">
               <div
                 className="bg-gradient-to-b from-white via-[#fdfbf9] to-[#faf8f5] rounded-[clamp(12px,1.5vw,20px)] p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-start items-center text-center w-full h-full relative overflow-y-auto shadow-[inset_4px_0_16px_rgba(0,0,0,0.08),inset_0_4px_24px_rgba(0,0,0,0.06)]"
-                style={{ WebkitOverflowScrolling: "touch" }}
+                style={
+                  {
+                    WebkitOverflowScrolling: "touch",
+                    transform: "translate3d(0,0,0)",
+                    touchAction: "pan-y",
+                  } as React.CSSProperties
+                }
               >
                 {/* Paper texture overlay */}
                 <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.015)_2px,rgba(0,0,0,0.015)_4px)] opacity-30 pointer-events-none"></div>
